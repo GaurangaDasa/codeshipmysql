@@ -13,11 +13,11 @@ public class DataUtil {
 		
 		String host="localhost";
 		String port="3306";
-	//	String un=System.getenv("MYSQL_USER");
-		String un="root";
-	//	String pw=System.getenv("MYSQL_PASSWORD");
-		String pw="root";
-		String database="world";
+		String un=System.getenv("MYSQL_USER");
+	//	String un="root";
+		String pw=System.getenv("MYSQL_PASSWORD");
+	//	String pw="root";
+		String database="test";
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
