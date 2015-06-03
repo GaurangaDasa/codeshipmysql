@@ -13,11 +13,11 @@ public class DataUtil {
 		
 		String host="localhost";
 		String port="3306";
-		String un=System.getenv("MYSQL_USER");
-	//	String un="root";
-		String pw=System.getenv("MYSQL_PASSWORD");
-	//	String pw="root";
-		String database="test";
+	//	String un=System.getenv("MYSQL_USER");
+		String un="root";
+	//	String pw=System.getenv("MYSQL_PASSWORD");
+		String pw="root";
+		String database="world";
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
@@ -27,7 +27,7 @@ public class DataUtil {
 		
 		try {
 			Connection con = DriverManager.getConnection("jdbc:mysql://"+host+":"+port+"/"+database,un,pw);
-			PreparedStatement pst = con.prepareStatement("show tables;");
+			PreparedStatement pst = con.prepareStatement("show databases;");
 			ResultSet rs = pst.executeQuery();
 			while(rs.next()) {
 				System.out.println(rs.getString(1));
